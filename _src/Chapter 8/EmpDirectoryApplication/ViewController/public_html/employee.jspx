@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="employee.jspx" id="d1" binding="#{backingBeanScope.backing_employee.d1}">
+            <af:form id="f1" binding="#{backingBeanScope.backing_employee.f1}">
+                <af:pageTemplate viewId="/WebPageTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+                    <f:facet name="content">
+                        <af:switcher id="s1" binding="#{backingBeanScope.backing_employee.s1}" defaultFacet="first">
+                            <f:facet name="first"/>
+                            <f:facet name="second"/>
+                        </af:switcher>
+                    </f:facet>
+                    <f:facet name="navigation"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_employee-->
+</jsp:root>

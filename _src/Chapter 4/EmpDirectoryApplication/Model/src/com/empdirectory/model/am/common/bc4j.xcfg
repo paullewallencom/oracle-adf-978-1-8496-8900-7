@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.empdirectory.model.am.EmpDirectoryModule">
+      <AppModuleConfig name="EmpDirectoryModuleLocal" jbo.project="com.empdirectory.model.Model" ApplicationName="com.empdirectory.model.am.EmpDirectoryModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.empdirectory.model.am.EmpDirectoryModule"/>
+         <Custom JDBCDataSource="jdbc/HRSchemaDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="com.empdirectory.model.am.AppModule">
+      <AppModuleConfig name="AppModuleLocal" jbo.project="com.empdirectory.model.Model" ApplicationName="com.empdirectory.model.am.AppModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.empdirectory.model.am.AppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRSchemaDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared" jbo.project="com.empdirectory.model.Model" ApplicationName="com.empdirectory.model.am.AppModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.empdirectory.model.am.AppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRSchemaDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

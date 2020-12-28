@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document title="index" id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+             <af:table value="#{bindings.EmpVO1.collectionModel}" var="row" rows="#{bindings.EmpVO1.rangeSize}"
+                  emptyText="#{bindings.EmpVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.EmpVO1.rangeSize}" rowBandingInterval="0" id="t1">
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Empno.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Empno.label}" id="c1">
+            <af:inputText value="#{row.bindings.Empno.inputValue}" label="#{bindings.EmpVO1.hints.Empno.label}"
+                          required="#{bindings.EmpVO1.hints.Empno.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Empno.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Empno.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Empno.tooltip}" id="it1">
+              <f:validator binding="#{row.bindings.Empno.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpVO1.hints.Empno.format}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Ename.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Ename.label}" id="c2">
+            <af:inputText value="#{row.bindings.Ename.inputValue}" label="#{bindings.EmpVO1.hints.Ename.label}"
+                          required="#{bindings.EmpVO1.hints.Ename.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Ename.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Ename.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Ename.tooltip}" id="it2">
+              <f:validator binding="#{row.bindings.Ename.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Job.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Job.label}" id="c3">
+            <af:inputText value="#{row.bindings.Job.inputValue}" label="#{bindings.EmpVO1.hints.Job.label}"
+                          required="#{bindings.EmpVO1.hints.Job.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Job.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Job.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Job.tooltip}" id="it3">
+              <f:validator binding="#{row.bindings.Job.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Mgr.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Mgr.label}" id="c4">
+            <af:inputText value="#{row.bindings.Mgr.inputValue}" label="#{bindings.EmpVO1.hints.Mgr.label}"
+                          required="#{bindings.EmpVO1.hints.Mgr.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Mgr.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Mgr.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Mgr.tooltip}" id="it4">
+              <f:validator binding="#{row.bindings.Mgr.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpVO1.hints.Mgr.format}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Hiredate.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Hiredate.label}" id="c5">
+            <af:inputDate value="#{row.bindings.Hiredate.inputValue}" label="#{bindings.EmpVO1.hints.Hiredate.label}"
+                          required="#{bindings.EmpVO1.hints.Hiredate.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Hiredate.displayWidth}"
+                          shortDesc="#{bindings.EmpVO1.hints.Hiredate.tooltip}" id="id1">
+              <f:validator binding="#{row.bindings.Hiredate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.EmpVO1.hints.Hiredate.format}"/>
+            </af:inputDate>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Sal.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Sal.label}" id="c6">
+            <af:inputText value="#{row.bindings.Sal.inputValue}" label="#{bindings.EmpVO1.hints.Sal.label}"
+                          required="#{bindings.EmpVO1.hints.Sal.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Sal.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Sal.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Sal.tooltip}" id="it5">
+              <f:validator binding="#{row.bindings.Sal.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Comm.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Comm.label}" id="c7">
+            <af:inputText value="#{row.bindings.Comm.inputValue}" label="#{bindings.EmpVO1.hints.Comm.label}"
+                          required="#{bindings.EmpVO1.hints.Comm.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Comm.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Comm.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Comm.tooltip}" id="it6">
+              <f:validator binding="#{row.bindings.Comm.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Deptno.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Deptno.label}" id="c8">
+            <af:inputText value="#{row.bindings.Deptno.inputValue}" label="#{bindings.EmpVO1.hints.Deptno.label}"
+                          required="#{bindings.EmpVO1.hints.Deptno.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Deptno.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Deptno.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Deptno.tooltip}" id="it7">
+              <f:validator binding="#{row.bindings.Deptno.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpVO1.hints.Deptno.format}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmpVO1.hints.Rowid.name}" sortable="false"
+                     headerText="#{bindings.EmpVO1.hints.Rowid.label}" id="c9">
+            <af:inputText value="#{row.bindings.Rowid.inputValue}" label="#{bindings.EmpVO1.hints.Rowid.label}"
+                          required="#{bindings.EmpVO1.hints.Rowid.mandatory}"
+                          columns="#{bindings.EmpVO1.hints.Rowid.displayWidth}"
+                          maximumLength="#{bindings.EmpVO1.hints.Rowid.precision}"
+                          shortDesc="#{bindings.EmpVO1.hints.Rowid.tooltip}" id="it8">
+              <f:validator binding="#{row.bindings.Rowid.validator}"/>
+            </af:inputText>
+          </af:column>
+        </af:table>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

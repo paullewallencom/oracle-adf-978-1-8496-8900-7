@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <af:pageTemplateDef var="attrs" definition="private">
+        <af:xmlContent>
+            <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+                <display-name>WebPageTemplate</display-name>
+                <facet>
+                    <facet-name>
+                        content
+                    </facet-name>
+                </facet>
+                <facet>
+                    <facet-name>
+                        navigation
+                    </facet-name>
+                </facet>
+            </component>
+        </af:xmlContent>
+        <af:panelStretchLayout startWidth="100px" endWidth="100px" id="pt_psl1">
+            <f:facet name="center">
+                <af:decorativeBox theme="dark" id="pt_db3">
+                    <f:facet name="center">
+                        <af:decorativeBox theme="medium" id="pt_db2">
+                            <f:facet name="center">
+                                <af:panelStretchLayout topHeight="50" startWidth="100px" endWidth="100px" id="pt_psl2">
+                                    <f:facet name="start">
+                                        <af:facetRef facetName="navigation"/>
+                                    </f:facet>
+                                    <f:facet name="center">
+                                        <af:decorativeBox theme="default" id="pt_db1">
+                                            <f:facet name="center">
+                                                <af:facetRef facetName="content"/>
+                                            </f:facet>
+                                        </af:decorativeBox>
+                                    </f:facet>
+                                    <f:facet name="end"/>
+                                </af:panelStretchLayout>
+                            </f:facet>
+                        </af:decorativeBox>
+                    </f:facet>
+                </af:decorativeBox>
+            </f:facet>
+            <f:facet name="top"/>
+        </af:panelStretchLayout>
+    </af:pageTemplateDef>
+</jsp:root>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="createEmployeeFlow">
+    <default-activity>callInit</default-activity>
+    <input-parameter-definition id="__3">
+      <name>param</name>
+      <value>{pageFlowScope.employeeBean.count}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <managed-bean id="__1">
+      <managed-bean-name>employeeBean</managed-bean-name>
+      <managed-bean-class>com.employee.ui.EmployeeBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <method-call id="callInit">
+      <method>#{pageFlowScope.employeeBean.callInit}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <router id="checkEmployeeDepartment">
+      <case id="__2">
+        <expression>#{pageFlowScope.employeeBean.count == 1}</expression>
+        <outcome>department</outcome>
+      </case>
+      <default-outcome>sdd</default-outcome>
+    </router>
+    <task-flow-call id="createDepartmentFlow">
+      <task-flow-reference>
+        <document>/WEB-INF/createDepartmentFlow.xml</document>
+        <id>createDepartmentFlow</id>
+      </task-flow-reference>
+      <input-parameter id="__8">
+        <name>param</name>
+        <value>#{pageFlowScope.employeeBean.count}</value>
+      </input-parameter>
+    </task-flow-call>
+    <control-flow-rule id="__4">
+      <from-activity-id>callInit</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>employee</from-outcome>
+        <to-activity-id>checkEmployeeDepartment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>checkEmployeeDepartment</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>department</from-outcome>
+        <to-activity-id>createDepartmentFlow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

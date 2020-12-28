@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.61.83" id="deptPageDef"
+                Package="com.empdirectory.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="com.empdirectory.view.pageDefs.WebPageTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="DeptVO1" RangeSize="25" DataControl="EmpDirectoryModuleDataControl" id="DeptVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DeptVO1Iterator" id="DeptVO1">
+      <nodeDefinition DefName="com.empdirectory.model.view.DeptVO" Name="DeptVO10">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

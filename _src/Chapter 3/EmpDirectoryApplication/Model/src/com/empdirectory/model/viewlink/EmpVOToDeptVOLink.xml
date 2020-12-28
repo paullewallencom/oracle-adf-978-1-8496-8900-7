@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpVOToDeptVOLink"
+  Version="11.1.2.61.83"
+  EntityAssociation="com.empdirectory.model.association.EmpEOToDeptEOAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.empdirectory.model.viewlink.EmpVOToDeptVOLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="EmpVO"
+    Cardinality="-1"
+    Source="true"
+    Owner="com.empdirectory.model.view.EmpVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="EmpVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.empdirectory.model.view.EmpVO.Deptno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DeptVO"
+    Cardinality="1"
+    Owner="com.empdirectory.model.view.DeptVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="DeptVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.empdirectory.model.view.DeptVO.Deptno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.empdirectory.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

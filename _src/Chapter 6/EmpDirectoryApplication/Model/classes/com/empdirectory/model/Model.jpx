@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="11.1.2.62.94"
+  SeparateXMLFiles="true"
+  PackageName="com.empdirectory.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../Model.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="HRSchema"/>
+    <Attr Name="_appModuleNames0" Value="com.empdirectory.model.am.EmpDirectoryModule"/>
+    <Attr Name="_appModuleNames1" Value="com.empdirectory.model.am.AppModule"/>
+
+  </DesignTime>
+  <Containee
+    Name="am"
+    PackageName="com.empdirectory.model.am"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="association"
+    PackageName="com.empdirectory.model.association"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entity"
+    PackageName="com.empdirectory.model.entity"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="view"
+    PackageName="com.empdirectory.model.view"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="viewlink"
+    PackageName="com.empdirectory.model.viewlink"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

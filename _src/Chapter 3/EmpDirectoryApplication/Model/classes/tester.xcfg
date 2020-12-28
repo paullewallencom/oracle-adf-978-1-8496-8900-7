@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.empdirectory.model.am.EmpDirectoryModule">
+      <AppModuleConfig name="139F62F1A82" user="hr" JDBCName="HRSchema" password="fusion" DeployPlatform="LOCAL" jbo.project="com.empdirectory.model.Model" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="EmpDirectoryModule" ApplicationName="com.empdirectory.model.am.EmpDirectoryModule" DBconnection="jdbc:oracle:thin:@localhost:1521:XE">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="com.empdirectory.model.am.EmpDirectoryModule"/>
+         <Tester FullProxyInterfaceName="com.empdirectory.model.am.common.EmpDirectoryModule"/>
+         <Custom LastUsedConfiguration="EmpDirectoryModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

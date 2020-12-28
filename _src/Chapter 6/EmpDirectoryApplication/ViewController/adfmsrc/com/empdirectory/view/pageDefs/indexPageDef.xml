@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.61.83" id="indexPageDef"
+                Package="com.empdirectory.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpVO1" RangeSize="25" DataControl="EmpDirectoryModuleDataControl" id="EmpVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmpVO1Iterator" id="EmpVO1">
+      <nodeDefinition DefName="com.empdirectory.model.view.EmpVO" Name="EmpVO10">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="Job"/>
+          <Item Value="Mgr"/>
+          <Item Value="Hiredate"/>
+          <Item Value="Sal"/>
+          <Item Value="Comm"/>
+          <Item Value="Deptno"/>
+          <Item Value="Rowid"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="EmpDirectoryModuleDataControl"/>
+    <action IterBinding="EmpVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    
+  </bindings>
+</pageDefinition>

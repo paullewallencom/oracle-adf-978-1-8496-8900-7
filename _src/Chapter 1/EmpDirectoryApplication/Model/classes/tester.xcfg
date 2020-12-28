@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.empdirectory.model.am.EmpDirectoryModule">
+      <AppModuleConfig name="13E2570234D" DBconnection="java:comp/env/jdbc/HRSchemaDS" ApplicationName="com.empdirectory.model.am.EmpDirectoryModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="HRSchema" BC4JConfigName="EmpDirectoryModuleLocal" jbo.project="com.empdirectory.model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="com.empdirectory.model.am.EmpDirectoryModule"/>
+         <Tester FullProxyInterfaceName="com.empdirectory.model.am.common.EmpDirectoryModule"/>
+         <Custom LastUsedConfiguration="EmpDirectoryModuleLocal" JDBCDataSource="java:comp/env/jdbc/HRSchemaDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

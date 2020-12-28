@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="dept" id="d1" binding="#{backingBeanScope.backing_dept.d1}">
+            <af:messages id="m1" binding="#{backingBeanScope.backing_dept.m1}"/>
+            <af:form id="f1" binding="#{backingBeanScope.backing_dept.f1}">
+                <af:pageTemplate viewId="/WebPageTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+                    <f:facet name="content">
+                        <af:table value="#{bindings.DeptVO1.collectionModel}" var="row"
+                                  rows="#{bindings.DeptVO1.rangeSize}"
+                                  emptyText="#{bindings.DeptVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.DeptVO1.rangeSize}" rowBandingInterval="0" id="t1"
+                                  binding="#{backingBeanScope.backing_dept.t1}">
+                            <af:column sortProperty="#{bindings.DeptVO1.hints.Deptno.name}" sortable="false"
+                                       headerText="#{bindings.DeptVO1.hints.Deptno.label}" id="c1">
+                                <af:inputText value="#{row.bindings.Deptno.inputValue}"
+                                              label="#{bindings.DeptVO1.hints.Deptno.label}"
+                                              required="#{bindings.DeptVO1.hints.Deptno.mandatory}"
+                                              columns="#{bindings.DeptVO1.hints.Deptno.displayWidth}"
+                                              maximumLength="#{bindings.DeptVO1.hints.Deptno.precision}"
+                                              shortDesc="#{bindings.DeptVO1.hints.Deptno.tooltip}" id="it1">
+                                    <f:validator binding="#{row.bindings.Deptno.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.DeptVO1.hints.Deptno.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.DeptVO1.hints.Dname.name}" sortable="false"
+                                       headerText="#{bindings.DeptVO1.hints.Dname.label}" id="c2">
+                                <af:inputText value="#{row.bindings.Dname.inputValue}"
+                                              label="#{bindings.DeptVO1.hints.Dname.label}"
+                                              required="#{bindings.DeptVO1.hints.Dname.mandatory}"
+                                              columns="#{bindings.DeptVO1.hints.Dname.displayWidth}"
+                                              maximumLength="#{bindings.DeptVO1.hints.Dname.precision}"
+                                              shortDesc="#{bindings.DeptVO1.hints.Dname.tooltip}" id="it2">
+                                    <f:validator binding="#{row.bindings.Dname.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.DeptVO1.hints.Loc.name}" sortable="false"
+                                       headerText="#{bindings.DeptVO1.hints.Loc.label}" id="c3">
+                                <af:inputText value="#{row.bindings.Loc.inputValue}"
+                                              label="#{bindings.DeptVO1.hints.Loc.label}"
+                                              required="#{bindings.DeptVO1.hints.Loc.mandatory}"
+                                              columns="#{bindings.DeptVO1.hints.Loc.displayWidth}"
+                                              maximumLength="#{bindings.DeptVO1.hints.Loc.precision}"
+                                              shortDesc="#{bindings.DeptVO1.hints.Loc.tooltip}" id="it3">
+                                    <f:validator binding="#{row.bindings.Loc.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                    <f:facet name="navigation">
+                        <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_dept.pgl1}"
+                                             layout="vertical">
+                            <af:commandLink text="Employee information" id="cl1"
+                                            binding="#{backingBeanScope.backing_dept.cl1}"/>
+                            <af:commandLink text="Department information" id="cl2"
+                                            binding="#{backingBeanScope.backing_dept.cl2}"/>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_dept-->
+</jsp:root>

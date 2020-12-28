@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DeptVO"
+  Version="11.1.2.61.83"
+  SelectList="DeptEO.DEPTNO, 
+       DeptEO.DNAME, 
+       DeptEO.LOC"
+  FromList="HR.DEPT DeptEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="com.empdirectory.model.view.DeptVORowImpl"
+  ComponentClass="com.empdirectory.model.view.DeptVOImpl"
+  DefClass="com.empdirectory.model.view.DeptVODefImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.empdirectory.model.view.DeptVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="DeptEO"
+    Entity="com.empdirectory.model.entity.DeptEO"/>
+  <ViewAttribute
+    Name="Deptno"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="DeptEO"
+    AliasName="DEPTNO"/>
+  <ViewAttribute
+    Name="Dname"
+    PrecisionRule="true"
+    EntityAttrName="Dname"
+    EntityUsage="DeptEO"
+    AliasName="DNAME"/>
+  <ViewAttribute
+    Name="Loc"
+    PrecisionRule="true"
+    EntityAttrName="Loc"
+    EntityUsage="DeptEO"
+    AliasName="LOC"/>
+  <ViewLinkAccessor
+    Name="EmpVO"
+    ViewLink="com.empdirectory.model.viewlink.EmpVOToDeptVOLink"
+    Type="oracle.jbo.RowIterator"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.empdirectory.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
